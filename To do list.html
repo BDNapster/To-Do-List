@@ -5,8 +5,8 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-<h1><center style="border-style:dashed; border-width:2px; color:white;">What i want do do</center></h1>
+<body id="body2">
+<h1><center style="border-style:dashed; border-width:2px; color:black;!important">What i want do do</center></h1>
 <!--============Table box 1 left ============-->
 <center>
 <div>
@@ -22,10 +22,17 @@
 	</thead>
 	<tfoot>
 		<tr>
-			<td>Total Task : <input type="text" name="Date" style="width:20px;"></td>
-			<td>&nbsp;<input type="text" name="Date" style="width:20px;"> % done.</td>
-			<td>L/U <input type="text" name="Date" style="width:70px;"></td>
-			<td>Total Done: <input type="text" name="Date" style="width:20px;"></td>
+			<td>Total Task : <input type="text" name="Date" style="width:70px;" id="localstorage20" autofocus >
+			<button id="clear20">C</button>
+			<button id="empty20">E</button>
+			</td>
+			<td>&nbsp;<input type="text" name="Date" style="width:20px;" id="localstorage21" autofocus > % done.
+		        <button id="clear21">C</button>
+			<button id="empty21">E</button></td>
+			<td>L/U <input type="text" name="Date" style="width:90px;" id="localstorage22" autofocus ><button id="clear22">C</button>
+			<button id="empty22">E</button></td>
+			<td>Total Done: <input type="text" name="Date" style="width:20px;" id="localstorage23" autofocus ><button id="clear23">C</button>
+			<button id="empty23">E</button></td>
 		</tr>
 	</tfoot>
 	<tbody>
@@ -914,6 +921,147 @@
 				};
 				document.querySelector('#empty19').onclick = function() {
 					demo19.value = '';
+					localStorage.clear();	
+				};
+			}
+			
+		})();
+		
+<!--================== Demo20================-->
+		(function() {
+			
+			var demo20 = document.querySelector('#localstorage20');
+			
+			function supportsLocalStorage() {
+				return typeof(Storage)!== 'undefined';
+			}
+			
+			if (!supportsLocalStorage()) {
+				demo20.value = 'No HTML5 localStorage support, soz.';
+			} else {
+				try {
+					setInterval(function() {
+						localStorage.setItem('autosave20', demo20.value);
+					}, 1000);
+				} catch (e) {
+					if (e == QUOTA_EXCEEDED_ERR) {
+						alert('Quota exceeded!');
+					}
+				}
+				if (localStorage.getItem('autosave20')) {
+					demo20.value = localStorage.getItem('autosave20');
+				}
+				document.querySelector('#clear20').onclick = function() {
+					demo20.value = '';
+					localStorage.removeItem('autosave20');
+				};
+				document.querySelector('#empty20').onclick = function() {
+					demo20.value = '';
+					localStorage.clear();	
+				};
+			}
+			
+		})();
+<!--================== Demo21================-->
+		(function() {
+			
+			var demo21 = document.querySelector('#localstorage21');
+			
+			function supportsLocalStorage() {
+				return typeof(Storage)!== 'undefined';
+			}
+			
+			if (!supportsLocalStorage()) {
+				demo21.value = 'No HTML5 localStorage support, soz.';
+			} else {
+				try {
+					setInterval(function() {
+						localStorage.setItem('autosave21', demo21.value);
+					}, 1000);
+				} catch (e) {
+					if (e == QUOTA_EXCEEDED_ERR) {
+						alert('Quota exceeded!');
+					}
+				}
+				if (localStorage.getItem('autosave21')) {
+					demo21.value = localStorage.getItem('autosave21');
+				}
+				document.querySelector('#clear21').onclick = function() {
+					demo21.value = '';
+					localStorage.removeItem('autosave21');
+				};
+				document.querySelector('#empty21').onclick = function() {
+					demo21.value = '';
+					localStorage.clear();	
+				};
+			}
+			
+		})();
+<!--================== Demo22================-->
+		(function() {
+			
+			var demo22 = document.querySelector('#localstorage22');
+			
+			function supportsLocalStorage() {
+				return typeof(Storage)!== 'undefined';
+			}
+			
+			if (!supportsLocalStorage()) {
+				demo22.value = 'No HTML5 localStorage support, soz.';
+			} else {
+				try {
+					setInterval(function() {
+						localStorage.setItem('autosave22', demo22.value);
+					}, 1000);
+				} catch (e) {
+					if (e == QUOTA_EXCEEDED_ERR) {
+						alert('Quota exceeded!');
+					}
+				}
+				if (localStorage.getItem('autosave22')) {
+					demo22.value = localStorage.getItem('autosave22');
+				}
+				document.querySelector('#clear22').onclick = function() {
+					demo22.value = '';
+					localStorage.removeItem('autosave22');
+				};
+				document.querySelector('#empty22').onclick = function() {
+					demo22.value = '';
+					localStorage.clear();	
+				};
+			}
+			
+		})();
+<!--================== Demo23================-->
+		(function() {
+			
+			var demo23 = document.querySelector('#localstorage23');
+			
+			function supportsLocalStorage() {
+				return typeof(Storage)!== 'undefined';
+			}
+			
+			if (!supportsLocalStorage()) {
+				demo23.value = 'No HTML5 localStorage support, soz.';
+			} else {
+				try {
+					setInterval(function() {
+						localStorage.setItem('autosave23', demo23.value);
+					}, 1000);
+				} catch (e) {
+					if (e == QUOTA_EXCEEDED_ERR) {
+						alert('Quota exceeded!');
+					}
+				}
+				if (localStorage.getItem('autosave23')) {
+					demo23.value = localStorage.getItem('autosave23');
+				}
+				document.querySelector('#clear23').onclick = function() {
+					demo23.value = '';
+					localStorage.removeItem('autosave23');
+				};
+				document.querySelector('#empty23').onclick = function() {
+					demo23.value = '';
 					localStorage.clear();	
 				};
 			}
